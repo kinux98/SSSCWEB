@@ -200,19 +200,6 @@ if __name__ == "__main__":
                 if isinstance(v, torch.Tensor):
                     state[k] = v.to(device)
         cur_snapshot = os.path.basename(os.path.dirname(args.pretrained))
-        # print("Start from only weights")
-        # checkpoint = torch.load(args.pretrained)
-        # new_dict = {}
-        # for k in checkpoint['state_dict'].keys():
-        #     if "feature_extraction" in k:
-        #         new_name = ""
-        #         for n in k.split('.')[1:]:
-        #             new_name += n + "."
-        #         new_name = new_name[:-1]
-        #         new_dict[new_name] = checkpoint['state_dict'][k]
-        # model.feature_extraction.load_state_dict(new_dict, strict=True)
-        # best_val = 0
-        # start_epoch = 0
 
     else:
         best_val = 0
@@ -234,14 +221,6 @@ if __name__ == "__main__":
     print("save path : ", save_path)
     
     t_model = None
-    if args.run_contra == True:
-        t_model = copy.deepcopy(model)
-        for param in t_model.parameters():
-            param.detach_()
-        t_model.load_state_dict(model.state_dict())
-        t_model = nn.DataParallel(t_model) #.eval()
-        t_model = t_model.to(device)
-
     model = nn.DataParallel(model)
     model = model.to(device)
 
@@ -254,7 +233,7 @@ if __name__ == "__main__":
     train_started = time.time()
     is_sgood = True
 
-    wandb.init(project="cat_semi_finetune_wacv_adv")#, mode="disabled")
+    wandb.init(project="SSSCWEB")#, mode="disabled")
     wandb.run.name = str(args.snapshots.split("/")[-1])
 
     for epoch in range(start_epoch, args.epochs):
