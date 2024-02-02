@@ -87,7 +87,7 @@ python train.py --snapshots=./snapshots/unsup_pfpascal_pfwillow --run_yt=True --
 ## Citation
 
 If you find this project useful, please consider citing it as follows:
-
+```
 @InProceedings{Kwon_2024_WACV,
     author    = {Kwon, Donghyeon and Cho, Minsu and Kwak, Suha},
     title     = {Self-Supervised Learning of Semantic Correspondence Using Web Videos},
@@ -96,7 +96,7 @@ If you find this project useful, please consider citing it as follows:
     year      = {2024},
     pages     = {2142-2152}
 }
-
+```
 ## Acknowledgements
 
 We borrowed some code from:
