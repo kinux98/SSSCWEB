@@ -81,7 +81,7 @@ python train.py --snapshots=./snapshots/unsup_spair --run_yt=True --run_sb=False
 For PF-PASCAL and PF-WILLOW, run:
 
 ```bash
-For PF-PASCAL and PF-WILLOW, run:
+python train.py --snapshots=./snapshots/unsup_pfpascal_pfwillow --run_yt=True --run_sb=False --run_dann=True --run_contra=False --benchmark=pfpascal --eval_benchmark=pfpascal --eval_benchmark2=pfwillow
 ```
 
 ## Citation
