@@ -48,7 +48,7 @@ Before starting, you should login wandb using your personal API key.
 
 Before getting started, you need to download YouTube videos to generate pseudo-correspondence labels. You can download the videos from the following link: [Download Link](https://postechackr-my.sharepoint.com/:u:/g/personal/kinux98_postech_ac_kr/EQDZT5o3OTxPmqr0gbKCgBgBVWly44pl_5FY4C1cfIFrPA?e=GVNxjL) (total 46.5GB).
 
-Alternatively, you may download web videos by yourself using the provided codes in the `youtube_download` folder. To do this, modify the `class_list` and `data_range_start/end` in `common.py`. Then, run `GetURL.py`. It will download the searched video YouTube IDs (not the videos themselves) and their meta-info with thumbnail images.
+Alternatively, you may download web videos by yourself using the provided codes in the `youtube_download` folder. To do this, modify the `class_list` in `common.py`. Then, run `GetURL.py`. It will download the searched video YouTube IDs (not the videos themselves) and their meta-info with thumbnail images.
 
 Finally, run `youtube_downloader.py` with the proper path. It will automatically download YouTube videos based on the provided meta-info.
 
